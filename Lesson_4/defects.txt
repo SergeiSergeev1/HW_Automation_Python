@@ -1,0 +1,17 @@
+1. Функция "contains" (string, symbol) возвращает неправильный результат, если искомый символ, является пустойф строкой:
+
+Test case: string = 'Sky', symbol = ''
+Expected Result: False
+Actual Result: True
+
+2. Функция "starts_with" (string, symbol) возвращает неправильный результат, если искомый символ, является пустойф строкой:
+
+Test case: string = '1234', symbol = ''
+Expected Result: False
+Actual Result: True
+
+3. Функция "end_with" (string, symbol) возвращает неправильный результат, если искомый символ, является пустойф строкой:
+
+Test case: string = 'Sky', symbol = ''
+Expected Result: False
+Actual Result: True
