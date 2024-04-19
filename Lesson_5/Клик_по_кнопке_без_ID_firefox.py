@@ -20,4 +20,3 @@ driver.quit()
 
 
 
-driver.close()

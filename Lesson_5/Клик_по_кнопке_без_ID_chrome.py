@@ -11,7 +11,7 @@ for i in range(3):
     sleep(1)
     click_button = driver.find_element(By.CSS_SELECTOR, "button.btn.btn-primary").click()
     sleep(1)
-    driver.send
+    
    
 
 driver.quit()
