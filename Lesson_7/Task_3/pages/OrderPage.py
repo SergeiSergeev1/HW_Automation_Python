@@ -11,15 +11,18 @@ class OrderPage:
     def confirm(self):
         self.driver.find_element(By.CSS_SELECTOR, "#checkout").click()
 
-    def input_fields(self):
-        self.driver.find_element(By.CSS_SELECTOR, "#first-name").send_keys("Ivan")
-        self.driver.find_element(By.CSS_SELECTOR, "#last-name").send_keys("Ivanov")
-        self.driver.find_element(By.CSS_SELECTOR, "#postal-code").send_keys("123456")
+    def input_fields(self, inputData):
+        self.driver.find_element(By.CSS_SELECTOR, "#first-name").send_keys(inputData['first-name'])
+        self.driver.find_element(By.CSS_SELECTOR, "#last-name").send_keys(inputData['last-name'])
+        self.driver.find_element(By.CSS_SELECTOR, "#postal-code").send_keys(inputData['postal-code'])
         self.driver.find_element(By.CSS_SELECTOR, "#continue").click()
+
 
     def get_total_price(self):
         Total = self.driver.find_element(By.CSS_SELECTOR, ".summary_total_label").text
         return Total
+    
+    
     
     def close_site(self):
         self.driver.find_element(By.CSS_SELECTOR, "#finish").click()
