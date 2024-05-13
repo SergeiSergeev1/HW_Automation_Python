@@ -10,6 +10,7 @@ driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install())
 driver.implicitly_wait(4)
 def test_input_fields():
     driver.get("https://bonigarcia.dev/selenium-webdriver-java/data-types.html")
+    driver.maximize_window()
     driver.find_element(By.CSS_SELECTOR, '[name="first-name"]').send_keys("Иван")
     driver.find_element(By.CSS_SELECTOR, '[name="last-name"]').send_keys("Петров")
     driver.find_element(By.CSS_SELECTOR, '[name="address"]').send_keys("Ленина, 55-3")
@@ -25,7 +26,7 @@ def test_input_fields():
     zip_code_color = driver.find_element(By.CSS_SELECTOR, '#zip-code').value_of_css_property('background-color')
     assert zip_code_color == 'rgba(248, 215, 218, 1)'
 
-    other_fields = ['#first-name, #last-name, #address, #city, #country, #e-mail, #phone, #job-position, #company']
+    other_fields = ['#first-name', '#last-name', '#address', '#city,#country', '#e-mail', '#phone', '#job-position', '#company']
     for field in other_fields:
         field_color = driver.find_element(By.CSS_SELECTOR, field).value_of_css_property('background-color')
         assert field_color == 'rgba(209, 231, 221, 1)'
